@@ -16,10 +16,10 @@ gonderBtn.addEventListener("click", () => {
 });
 
 mesaj.addEventListener("focus", (e) => {
-    console.log(e.key);
-
     socket.emit("yaziyor", baslik.value);
+});
 
+mesaj.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
         socket.emit("chat", {
             baslik: baslik.value,
@@ -29,6 +29,8 @@ mesaj.addEventListener("focus", (e) => {
         mesaj.value = "";
     }
 });
+
+
 
 socket.on("chat", (data) => {
     output.innerHTML += "<p><strong>" + data.baslik + " :</strong> " + data.mesaj + "</p>";
