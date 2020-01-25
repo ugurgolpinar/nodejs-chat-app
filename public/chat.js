@@ -30,8 +30,6 @@ mesaj.addEventListener("keypress", (e) => {
     }
 });
 
-
-
 socket.on("chat", (data) => {
     output.innerHTML += "<p><strong>" + data.baslik + " :</strong> " + data.mesaj + "</p>";
     feedback.innerHTML = "";
