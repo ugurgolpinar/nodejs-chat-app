@@ -1,4 +1,4 @@
-const socket = io.connect("http://localhost:5000");
+const socket = io.connect("https://golpinarugur.herokuapp.com/");
 
 const baslik = document.querySelector("#baslik");
 const mesaj = document.querySelector("#mesaj");
