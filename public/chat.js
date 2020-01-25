@@ -15,7 +15,7 @@ gonderBtn.addEventListener("click", () => {
     mesaj.value = "";
 });
 
-mesaj.addEventListener("keypress", (e) => {
+mesaj.addEventListener("focus", (e) => {
     console.log(e.key);
 
     socket.emit("yaziyor", baslik.value);
