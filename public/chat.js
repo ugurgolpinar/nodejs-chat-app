@@ -19,6 +19,10 @@ mesaj.addEventListener("focus", (e) => {
     socket.emit("yaziyor", baslik.value);
 });
 
+mesaj.addEventListener("blur", (e) => {
+    feedback.innerHTML = "";
+});
+
 mesaj.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
         socket.emit("chat", {
@@ -29,6 +33,8 @@ mesaj.addEventListener("keypress", (e) => {
         mesaj.value = "";
     }
 });
+
+
 
 socket.on("chat", (data) => {
     output.innerHTML += "<p><strong>" + data.baslik + " :</strong> " + data.mesaj + "</p>";
